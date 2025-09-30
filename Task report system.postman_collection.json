@@ -1,0 +1,204 @@
+{
+	"info": {
+		"_postman_id": "d6b4c81f-3e31-4620-aa61-228b038e73e4",
+		"name": "Task report system",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26237581"
+	},
+	"item": [
+		{
+			"name": "Register User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"newuser02\",\r\n  \"email\": \"newuser@example.com\",\r\n  \"password1\": \"securepasword123\",\r\n  \"password2\":\"securepassword123\",\r\n  \"role\": 3\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/register/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"register",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU5MjM5NzM1LCJpYXQiOjE3NTkxNTMzMzUsImp0aSI6IjhjMzFjYzZkZTg3MjQxNjI4MjViOWY4NmRmODNiNzM3IiwidXNlcl9pZCI6MX0.nH5fv-iCzoygg8UZR1z44hTyVU4obEAbbq33L1SpzVo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/login/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Tasks",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU5MjM4ODM4LCJpYXQiOjE3NTkxNTI0MzgsImp0aSI6IjI3M2Q1MTYyNzJhNjRmM2E4NDEwNWQ1YzcwOWI2ZTMxIiwidXNlcl9pZCI6M30.Nw0yfGhVT_ParM3_nRwOfNgIHui29BkaDrjUHvXzEcs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "status",
+							"value": "completed",
+							"type": "text"
+						},
+						{
+							"key": "completion_report",
+							"value": "Completed the Backend work",
+							"type": "text"
+						},
+						{
+							"key": "worked_hours",
+							"value": "23",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/tasks/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"tasks",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login - Admin/Superadmin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU5MjM5NzM1LCJpYXQiOjE3NTkxNTMzMzUsImp0aSI6IjhjMzFjYzZkZTg3MjQxNjI4MjViOWY4NmRmODNiNzM3IiwidXNlcl9pZCI6MX0.nH5fv-iCzoygg8UZR1z44hTyVU4obEAbbq33L1SpzVo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/login/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user reports",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU5MjM5NzM1LCJpYXQiOjE3NTkxNTMzMzUsImp0aSI6IjhjMzFjYzZkZTg3MjQxNjI4MjViOWY4NmRmODNiNzM3IiwidXNlcl9pZCI6MX0.nH5fv-iCzoygg8UZR1z44hTyVU4obEAbbq33L1SpzVo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/tasks/2/report/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"tasks",
+						"2",
+						"report",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
