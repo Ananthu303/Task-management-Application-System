@@ -17,10 +17,9 @@ Start by cloning the project from GitHub:
 
 ```bash
 git clone https://github.com/Ananthu303/Task-management-Application-System.git
-cd Task-management-project
 ```
 
-### 2. Create and Activate a Virtual Environment
+### 2. Open project folder - Create and Activate a Virtual Environment
 
 It is recommended to use a virtual environment to manage dependencies for this project. Here’s how to create and activate it:
 
