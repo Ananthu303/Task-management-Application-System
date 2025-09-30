@@ -32,11 +32,11 @@ tm_venv\Scripts\activate
 
 For **macOS/Linux**:
 ```bash
-python3 -m venv venv
-source venv/bin/activate
+python3 -m venv tm_venv
+source tm_venv/bin/activate
 ```
 
-Once activated, your terminal should show something like `(venv)` indicating that the virtual environment is active.
+Once activated, your terminal should show something like `(tm_venv)` indicating that the virtual environment is active.
 
 ### 3. Install Dependencies
 
